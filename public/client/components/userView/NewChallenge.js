@@ -87,16 +87,15 @@ export default class NewChallenge extends React.Component {
 
           <form className="form" onSubmit={this.newChallenge}>
             <h3>New Challenge</h3>
-            <input className="form-control" type="text" name="invited" placeholder="Jane Doe, Joe Shmo" ref="invited" />
-            <select className="exercise-dropdown" name="exercise" form='newChallenge' ref="exercise" >
-            <option value="">--Select Exercise--</option>
+            <input className="form-control" type="text" name="invited" placeholder="Jane Doe, Joe Shmo" required="true" ref="invited" />
+            <select className="exercise-dropdown" name="exercise" form='newChallenge' required="true" ref="exercise" >
+            <option value="Some Exercise">--Select Exercise--</option>
               { this.state.exercises.map((exercise, i) =>
               <option key={i} value={exercise.toString()}>{exercise}</option>) }
             </select>  OR  <input type="text" name="custom" placeholder="Custom" ref="custom" /><br/><br/>
             <input className="form-control" type="datetime-local" max="2999-12-31" min="2017-02-08" name="time" ref="time" />
             <input className="form-control" type="text" name="location" placeholder="location" ref="location" value={this.state.query} onChange={this.onChangeLocation}/>
-                         <input className="form-control" placeholder="Address for Challenege" value={this.state.loc} />
-
+            <input className="form-control" placeholder="Address for Challenege" required="true" value={this.state.loc} />
             <button className="btn btn-primary admin-button" type="submit" value="Add User">Create Challenge</button>
 
           </form><br />

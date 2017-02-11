@@ -8,23 +8,23 @@ var challengeSchema = new mongoose.Schema({
   },
 
   invited: {
-    type: Array,
+    type: [String],
     required: true
   },
 
   exercise: {
     type: String,
-    required: false
+    required: true
   },
 
   time: {
     type: Date,
-    required: false
+    required: true
   },
 
   location: {
     type: String,
-    required: false
+    required: true
   }
   
 });

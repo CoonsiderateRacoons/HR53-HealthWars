@@ -18,6 +18,7 @@ export default class AddUser extends React.Component {
 
   handleSignInSubmit(e) {
     e.preventDefault();
+
     // console.log('inside handleSignInSubmit');
     var user = {
       username: this.refs.usernameSI.value,

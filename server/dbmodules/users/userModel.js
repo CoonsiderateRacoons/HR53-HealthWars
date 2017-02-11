@@ -39,7 +39,7 @@ var userSchema = new mongoose.Schema({
     type: [Number]
   },
 
-  achievements: {
+  challenges: {
     type: [String]
   },
 

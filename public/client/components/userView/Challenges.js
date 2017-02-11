@@ -8,8 +8,11 @@ export default class Challenges extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    	challenges: []
-    }
+    	challenges: [],
+    	accepted: []
+    };
+    this.acceptChallenge = this.acceptChallenge.bind(this);
+    this.declineChallenge = this.declineChallenge.bind(this);
   }
 
  componentDidMount () {
@@ -19,42 +22,63 @@ export default class Challenges extends React.Component {
     });
   }
 
+  acceptChallenge(added) {
+  	this.state.accepted.push(added)
+  	this.state.challenges.splice(this.state.challenges.indexOf(added), 1);
+  	this.setState({
+  		challenges: this.state.challenges,
+  		accepted: this.state.accepted
+  	})
+  }
+
+  declineChallenge(deleted) {
+ 		this.state.challenges.splice(this.state.challenges.indexOf(deleted), 1);
+  	this.setState({
+  		challenges: this.state.challenges,
+  	})
+  }
+
 	render() {
 		return (
 			<div>
 				<h1>Challenges</h1>
+	       <h3> Pending </h3>
 				<table className="pending">
-	         <th> Pending </th>
 	          <tbody>
 	          	<tr>
 	          		<th>Challenger</th>
 	          		<th>Challenged</th>
 	          		<th>Exercise</th>
-	          		<th>Date</th>
+	          		<th className='date'>Date</th>
 	          		<th>Location</th>
 	          		<th>Accept Challenge?</th>
 	          	</tr>
 	           	{this.state.challenges.map( (challenge, i) => {
-	           		console.log(challenge);
-              	return <Challenge key={i} user={challenge.user} invited={challenge.invited} exercise={challenge.exercise} date={challenge.time} location={challenge.location}/>
+              	return (<Challenge key={i} challenge={challenge} user={challenge.user} invited={challenge.invited} 
+              		exercise={challenge.exercise} date={challenge.time} location={challenge.location}
+              		acceptChallenge ={this.acceptChallenge} declineChallenge ={this.declineChallenge} /> )
             	})}
 	          </tbody>
 	        </table>
+	        <h3> Upcoming </h3>
 	        <table className="upcoming">
 	          <tbody>
-	           <th> Upcoming </th>
+	          	<tr>
 	           		<th>Challenger</th>
 	          		<th>Challenged</th>
 	          		<th>Exercise</th>
 	          		<th>Date</th>
 	          		<th>Location</th>
-	          	{this.state.challenges.map( (item) => {
-	           		//return item;
-              	//return <Week key={i} weekInfo={num} weekNum={i} />
+	          		<th></th>
+	          	</tr>
+	          	{this.state.accepted.map( (challenge, i) => {
+              	return (<Challenge key={i} user={challenge.user} invited={challenge.invited} 
+              		exercise={challenge.exercise} date={challenge.time} location={challenge.location} /> )
             	})}
 	          </tbody>
 	        </table>
-				<button className="btn btn-primary admin-button"><Link to="/newChallenge">Create New Challenge</Link></button>
+	        <br/>
+				<button className="btn btn-primary admin-button"><Link classname="Link" to="/newChallenge">Create New Challenge</Link></button>
 			</div>
 		)
 	}

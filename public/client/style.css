@@ -116,6 +116,20 @@ body {
 
 th {
   font-size: 24px;
+  width: 700px;
+  text-align: center;
+}
+
+.date {
+  width: 1000px;
+}
+
+.Challenge {
+  text-align: center;
+  height: 40px;
+  border-top: 1px dotted #003ea0;
+  margin: 10px 0px 10px 0px;
+  padding-top: 0px;
 }
 
 .btn-toolbar .btn, .btn-toolbar .btn-group, .btn-toolbar .input-group {
@@ -220,7 +234,12 @@ a {
   font-size: 20px;
 }
 
-a:hover {
+a:hover, a:active {
   color: white;
   text-decoration: none;
 }
+
+
+
+
+

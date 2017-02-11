@@ -37,7 +37,7 @@ export default class UserView extends React.Component {
               return <Week key={i} weekInfo={num} weekNum={i} />
             })}
           </tbody>
-        </table> <br/>
+        </table> <br/> <br/>
         <Challenges user={this.state.currentUser}/>
       </div>
       )

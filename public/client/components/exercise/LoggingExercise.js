@@ -69,7 +69,6 @@ export default class LoggingExercise extends React.Component {
     var units = this.state.units;
     var currentScores = this.props.currentUser.scores;
 
-    // console.log('Current scores:', currentScores);
     // Change user's in-state scores array: increment last element (current round's score)
     currentScores[currentScores.length - 1] += units;
 
