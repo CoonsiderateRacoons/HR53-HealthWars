@@ -11,7 +11,7 @@ export default class AddToCalendar extends React.Component {
 		var beginning = "https://www.google.com/calendar/render?action=TEMPLATE";
 		var text = "&text=" + this.props.exercise.split(' ').join('+') + "+Challenge";
 		var dates = "&dates=" + this.props.date.toString().replace(/-|:|\.\d\d\d/g,"")+"/"+this.props.date.toString().replace(/-|:|\.\d\d\d/g,"")
-		var details = "&details="+ this.props.user + "+has+challenged+you+to+a+" + this.props.exercise + "+Challenge";
+		var details = "&details="+ this.props.user.split(' ').join('+') + "+has+challenged+you+to+a+" + this.props.exercise.split(' ').join('+') + "+Challenge";
 		var location = "&location=" + this.props.location.split(' ').join('+');
 		var end = "&sf=true&output=xmll#eventpage_6"
 

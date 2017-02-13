@@ -34,6 +34,18 @@ module.exports = {
     });
   },
 
+  getUserChallenges : function(req, res, next) {
+    console.log('currentUser name: ', req.params.user)
+    return findChallenges({user: req.params.user})
+    .then(function(challenges){
+      if(challenges) {
+        res.json(challenges);
+      }
+      next();
+    }).fail(function(err){
+      next(err);
+    });
+  },
 
   deleteChallenge : function(req, res, next) {
     return findChallenge(req.body).remove().exec()

@@ -1,0 +1,44 @@
+[
+	{
+	"user": "Savy Brandt", 
+	"invited": "Jared Spencer", 
+	"exercise": "Jumping Jacks", 
+	"time": "2017-02-15T12:30", 
+	"location": "611 Mission St #2, San Francisco, CA 94105, United States"
+	},
+	{
+	"user": "Savy Brandt", 
+	"invited": "Brian Schultz", 
+	"exercise": "Push-ups", 
+	"time": "2017-02-17T13:30", 
+	"location": "611 Mission St #2, San Francisco, CA 94105, United States"
+	},
+	{
+	"user": "Smriti Goel", 
+	"invited": "Savy Brandt", 
+	"exercise": "Running", 
+	"time": "2017-02-19T15:30", 
+	"location": "611 Mission St #2, San Francisco, CA 94105, United States"
+	},
+	{
+	"user": "Jared Spencer", 
+	"invited": "Savy Brandt", 
+	"exercise": "Planks", 
+	"time": "2017-02-20T10:30", 
+	"location": "611 Mission St #2, San Francisco, CA 94105, United States"
+	},
+	{
+	"user": "Savy Brandt", 
+	"invited": "Jared Spencer", 
+	"exercise": "Squats", 
+	"time": "2017-02-22T09:30", 
+	"location": "611 Mission St #2, San Francisco, CA 94105, United States"
+	},
+	{
+	"user": "Brian Schultz", 
+	"invited": "Savy Brandt", 
+	"exercise": "Jumping Jacks", 
+	"time": "2017-02-30T16:30", 
+	"location": "611 Mission St #2, San Francisco, CA 94105, United States"
+	}
+]

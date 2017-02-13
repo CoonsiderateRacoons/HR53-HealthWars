@@ -71,7 +71,7 @@ export default class NewChallenge extends React.Component {
 
       var challengeObj =  {
         user: this.state.user.name,
-        invited: this.refs.invited.value.split(','),
+        invited: this.refs.invited.name,
         exercise: this.refs.custom.value === '' ? this.refs.exercise.value : this.refs.custom.value,
         time: this.refs.time.value,
         location: this.refs.location.value
@@ -80,12 +80,6 @@ export default class NewChallenge extends React.Component {
       console.log(challengeObj)
 
       var context = this;
-      // console.log(context.state.users);
-      // for (var i = 0; i < context.state.users.length; i++) {
-      //   if (context.state.users[i].name === context.refs.invited.value) {
-      //     console.log(context.state.users[i]);
-      //   }
-      // }
       axios.get('/api/users/'+context.refs.invited.value)
       .then(function(res) {
         var email = res.data.email;
@@ -109,10 +103,6 @@ export default class NewChallenge extends React.Component {
       .catch(function(err) {
         console.log(err);
       });
-
-
-      //send email
-
     }
 
             // <input className="form-control" type="text" name="invited" placeholder="Jane Doe, Joe Shmo" required="true" ref="invited" />
@@ -129,11 +119,11 @@ export default class NewChallenge extends React.Component {
             <select className="exercise-dropdown" name="invited" form="newChallenge" required="true" ref="invited">
             <option value="Some User">--Select User--</option>
             { this.state.users.map((user, i) =>
-              <option type="checkbox" key={i} value={user}>{user}</option>) }
+              <option type="checkbox" key={i} value={user.toString()}>{user}</option>) }
               }
             </select>
             <br/>
-
+            <br/>
             <select className="exercise-dropdown" name="exercise" form='newChallenge' required="true" ref="exercise" >
             <option value="Some Exercise">--Select Exercise--</option>
               { this.state.exercises.map((exercise, i) =>

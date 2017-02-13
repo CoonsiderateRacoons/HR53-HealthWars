@@ -6,6 +6,7 @@ var Round = require('./dbmodules/rounds/roundModel.js');
 var User = require('./dbmodules/users/userModel.js');
 var Exercise = require('./dbmodules/exercises/exerciseModel.js');
 var Achievement = require('./dbmodules/achievement/achievementModel.js');
+var Challenge = require('./dbmodules/challenges/challengesModel.js');
 
 // Stub rounds data
 
@@ -13,6 +14,7 @@ var achData = require('./dummyData/achievements.json');
 var exData = require('./dummyData/exercises.json');
 var rdData = require('./dummyData/rounds.json');
 var usrData = require('./dummyData/users.json');
+var chlData = require('./dummyData/challenges.json');
 
 var insertData = function() {
 
@@ -49,6 +51,15 @@ var insertData = function() {
         console.log(err);
       }
       console.log('User saved to DB!');
+    });
+  });
+
+  chlData.forEach(function(chl) {
+    Challenge.create(chl, function(err, created) {
+      if (err) {
+        console.log(err);
+      }
+      console.log('Challenge saved to DB!');
     });
   });
 

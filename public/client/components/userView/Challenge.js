@@ -9,7 +9,7 @@ export default class Challenge extends React.Component {
     return (
       <tr className='Challenge'>
         <td className='user'>{this.props.user}</td>
-        <td className='invited'>{this.props.invited.join(', ')}</td>
+        <td className='invited'>{this.props.invited}</td>
         <td className='exercise'>{this.props.exercise}</td>
         <td className='date'>{dateFormat(this.props.date, "ddd, mmm d h:MM TT")}</td>
         <td className='location'>{this.props.location}</td>

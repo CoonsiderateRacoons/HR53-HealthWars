@@ -10,7 +10,8 @@ export default class Challenges extends React.Component {
     this.state = {
     	user: this.props.user,
     	challenges: [],
-    	accepted: []
+    	accepted: [],
+    	userChallenges: []
     };
     this.acceptChallenge = this.acceptChallenge.bind(this);
     this.declineChallenge = this.declineChallenge.bind(this);
@@ -25,6 +26,10 @@ export default class Challenges extends React.Component {
     axios.get('/api/accepted/'+ this.state.user.name)
     .then(function(res) {
       context.setState({accepted: res.data});
+    });
+    axios.get('/api/challenges/userChallenges/'+ this.state.user.name)
+    .then(function(res) {
+      context.setState({userChallenges: res.data});
     });
   }
 
@@ -55,7 +60,7 @@ export default class Challenges extends React.Component {
 		return (
 			<div>
 				<h1>Challenges</h1>
-	       <h3> Pending </h3>
+	       <h3> Pending Challenges</h3>
 				<table className="pending">
 	          <tbody>
 	          	<tr>
@@ -73,7 +78,7 @@ export default class Challenges extends React.Component {
             	})}
 	          </tbody>
 	        </table>
-	        <h3> Upcoming </h3>
+	        <h3> Accepted Challenges </h3>
 	        <table className="upcoming">
 	          <tbody>
 	          	<tr>
@@ -90,7 +95,23 @@ export default class Challenges extends React.Component {
             	})}
 	          </tbody>
 	        </table>
-
+	        <h3> Your Challenges </h3>
+	        <table className="upcoming">
+	          <tbody>
+	          	<tr>
+	           		<th>Challenger</th>
+	          		<th>Challenged</th>
+	          		<th>Exercise</th>
+	          		<th>Date</th>
+	          		<th>Location</th>
+	          		<th></th>
+	          	</tr>
+	          	{this.state.userChallenges.map( (challenge, i) => {
+              	return (<Challenge key={i} user={challenge.user} invited={challenge.invited} 
+              		exercise={challenge.exercise} date={challenge.time} location={challenge.location} /> )
+            	})}
+	          </tbody>
+	        </table>
 				<button className="btn btn-primary admin-button"><Link id="normalized-Link" to="/newChallenge">Create New Challenge</Link></button>
 			</div>
 		)

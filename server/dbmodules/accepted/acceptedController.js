@@ -21,7 +21,7 @@ module.exports = {
 
   getAccepteds : function(req, res, next) {
     console.log('currentUser name: ', req.params.user)
-    return findAccepteds({user: req.params.user})
+    return findAccepteds({invited: req.params.user})
     .then(function(Accepteds){
       if(Accepteds) {
         res.json(Accepteds);

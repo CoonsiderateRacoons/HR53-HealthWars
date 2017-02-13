@@ -61,5 +61,73 @@
       "ach-badazz",
       "ach-winner-3"
     ]
+  },
+    {
+    "name": "Savy Brandt",
+    "username": "savybrandt",
+    "password": "raccoons",
+    "team": "Design",
+    "email": "savybrandt@gmail.com",
+    "scores": [
+      9,
+      14,
+      11,
+      7
+    ],
+    "achievements": [
+      "ach-badazz",
+      "ach-winner-3"
+    ]
+  },
+    {
+    "name": "Jared Spencer",
+    "username": "jared",
+    "password": "raccoons",
+    "team": "Sales",
+    "email": "savybrandt@gmail.com",
+    "scores": [
+      9,
+      4,
+      10,
+      5
+    ],
+    "achievements": [
+      "ach-badazz",
+      "ach-winner-3"
+    ]
+  },
+    {
+    "name": "Brian Schultz",
+    "username": "lilb508",
+    "password": "raccoons",
+    "team": "Engineering",
+    "email": "savybrandt@gmail.com",
+    "scores": [
+      8,
+      10,
+      14,
+      4
+    ],
+    "achievements": [
+      "ach-badazz",
+      "ach-winner-3"
+    ]
+  },
+    {
+    "name": "Smriti Goel",
+    "username": "smritigoel",
+    "password": "raccoons",
+    "team": "Sales",
+    "email": "savybrandt@gmail.com",
+    "scores": [
+      15,
+      6,
+      8,
+      11
+    ],
+    "achievements": [
+      "ach-badazz",
+      "ach-winner-3"
+    ]
   }
 ]
